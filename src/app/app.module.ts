@@ -10,6 +10,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { LibraryPage } from '../pages/library/library';
 import { QuotePage } from '../pages/quote/quote';
+import { TabsPage } from '../pages/tabs/tabs';
+import { QuotesProvider } from '../providers/quotes/quotes';
 
 
 @NgModule({
@@ -19,7 +21,8 @@ import { QuotePage } from '../pages/quote/quote';
     LibraryPage,
     QuotePage,
     QuotesPage,
-    SettingsPage
+    SettingsPage,
+    TabsPage
 
 
   ],
@@ -34,12 +37,14 @@ import { QuotePage } from '../pages/quote/quote';
     LibraryPage,
     QuotePage,
     QuotesPage,
+    TabsPage,
     SettingsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    QuotesProvider
   ]
 })
 export class AppModule {}

@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { Component, OnInit } from '@angular/core';
+import {NavController,  NavParams} from 'ionic-angular';
+import { Quote } from '../../data/quote';
+import quotes from '../../data/quotes';
+import { QuotesPage } from '../quotes/quotes';
 
 /**
  * Generated class for the LibraryPage page.
@@ -12,13 +15,20 @@ import { NavController, NavParams } from 'ionic-angular';
   selector: 'page-library',
   templateUrl: 'library.html',
 })
-export class LibraryPage {
+export class LibraryPage  implements OnInit{
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  quoteCollection : {category : string, quotes: Quote[], icon: string}[];
+ pushPage: any;
+  ngOnInit(){
+    this.quoteCollection= quotes;
+  }
+  constructor(public navCtrl: NavController) {
+     this.pushPage = QuotesPage;
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LibraryPage');
-  }
+itemSelected(item :Quote){
+
+  this.navCtrl.push(QuotesPage,{item})
+}
 
 }
