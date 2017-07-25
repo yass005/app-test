@@ -1,6 +1,7 @@
 import { Quote } from './../../data/quote';
 import { Component } from '@angular/core';
 import { NavController, NavParams, AlertController  } from 'ionic-angular';
+import { QuotesProvider } from '../../providers/quotes/quotes';
 
 /**
  * Generated class for the QuotesPage page.
@@ -17,7 +18,8 @@ export class QuotesPage {
 
   quotes: {category : string, quotes: Quote[], icon: string}[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController,
+  public Quotes : QuotesProvider) {
 
  this.quotes=this.navParams.data;
   }
@@ -33,13 +35,15 @@ addToFavoris(item : Quote){
         {
           text: 'Disagree',
           handler: () => {
-            console.log('Disagree clicked');
+            this.Quotes.removefavoriteQuotes(item)
+            console.log(this.Quotes.getfavoriteQuotes())
           }
         },
         {
           text: 'Agree',
           handler: () => {
-            console.log('Agree clicked');
+            this.Quotes.AddfavoriteQuotes(item)
+            console.log(this.Quotes.getfavoriteQuotes())
           }
         }
       ]

@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Quote } from './../../data/quote';
 /*
@@ -12,7 +11,7 @@ import { Quote } from './../../data/quote';
 export class QuotesProvider {
 private favoriteQuotes : Quote[]=[];
 
-  constructor(public http: Http) {
+  constructor() {
     console.log('Hello QuotesProvider Provider');
   }
 
