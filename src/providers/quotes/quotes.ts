@@ -30,4 +30,12 @@ private favoriteQuotes : Quote[]=[];
     return this.favoriteQuotes.slice();
   }
 
+  isfavorite(quote: Quote): boolean{
+  const position = this.favoriteQuotes.indexOf(quote);
+
+  if (position>=0){
+return true
+  }
+return  false
+  }
 }

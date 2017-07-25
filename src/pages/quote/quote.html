@@ -7,12 +7,22 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>quote</ion-title>
+    <ion-title>{{person}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+<ion-card>
+  <ion-card-content>
+    {{text}}
+  </ion-card-content>
+  <ion-row>
+    <ion-col>
+      <button ion-button small outline color="danger" (click)="Unfavorite()">Unfavorite</button>
+    </ion-col>
+  </ion-row>
+</ion-card>
+<button ion-button (click)="onClose()" color="danger">Close</button>
 </ion-content>

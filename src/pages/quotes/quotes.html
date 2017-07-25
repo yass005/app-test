@@ -24,9 +24,14 @@
    <br>{{item.person | uppercase}}
   </ion-card-content>
   <ion-row>
-    <ion-col text-right>
-      <button ion-button clear small
+    <ion-col text-right >
+      <button *ngIf="!isFavorite(item)" ion-button clear small
       (click)="addToFavoris(item)">favorite</button>
+    </ion-col>
+
+    <ion-col text-right >
+      <button *ngIf="isFavorite(item)" ion-button clear small color="danger"
+      (click)="removefromFavoris(item)">unfavorite</button>
     </ion-col>
   </ion-row>
 </ion-card>

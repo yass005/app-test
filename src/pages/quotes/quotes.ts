@@ -35,8 +35,7 @@ addToFavoris(item : Quote){
         {
           text: 'Disagree',
           handler: () => {
-            this.Quotes.removefavoriteQuotes(item)
-            console.log(this.Quotes.getfavoriteQuotes())
+           console.log('cancel')
           }
         },
         {
@@ -49,5 +48,13 @@ addToFavoris(item : Quote){
       ]
     });
     confirm.present();
+  }
+
+  removefromFavoris(item : Quote){
+ this.Quotes.removefavoriteQuotes(item)
+  }
+
+  isFavorite(item : Quote){
+    return this.Quotes.isfavorite(item);
   }
 }
