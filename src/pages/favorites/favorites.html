@@ -7,6 +7,11 @@
 <ion-header>
 
   <ion-navbar>
+     <ion-buttons start>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-title>favorites</ion-title>
   </ion-navbar>
 
@@ -16,7 +21,7 @@
 <ion-content padding>
 <ion-list >
   <ion-item-sliding *ngFor="let item of quotes">
-  <ion-item   (click)="onViewQuote(item)">
+  <ion-item   (click)="onViewQuote(item)" color="QuoteBackground">
   <h2>  {{ item.person }} </h2>
   <p>{{item.text}}</p>
 </ion-item>

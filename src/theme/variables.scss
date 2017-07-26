@@ -13,7 +13,7 @@ $app-direction: ltr;
 
 
 @import "ionic.globals";
-
+ $content-padding: 8px;
 
 // Shared Variables
 // --------------------------------------------------
@@ -38,7 +38,8 @@ $colors: (
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222,
+  QuoteBackground:   #f2f7c0
 );
 
 
